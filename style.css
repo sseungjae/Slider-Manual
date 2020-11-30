@@ -19,4 +19,22 @@ body {
   height: 100%;
   background-size: cover;
   background-position: center;
+  z-index: 1;
+  display: flex;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+  background-color: rgba(250, 128, 114, 0.303);
+}
+
+.home .container {
+  flex-grow: 1;
+}
+
+.home .caption h1 {
+  font-size: 40px;
+  color: #000000;
+  margin: 0;
 }
