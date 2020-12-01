@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 * {
@@ -9,6 +10,8 @@ body {
 
 .home {
   height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .home .slide {
@@ -20,7 +23,21 @@ body {
   background-size: cover;
   background-position: center;
   z-index: 1;
+  display: none;
+  animation: slide 2s ease;
+}
+
+.home .slide.active {
   display: flex;
+}
+
+@keyframes slide {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .container {
@@ -33,8 +50,26 @@ body {
   flex-grow: 1;
 }
 
+.home .caption {
+  width: 50%;
+}
+
 .home .caption h1 {
-  font-size: 40px;
+  font-size: 42px;
   color: #000000;
   margin: 0;
+}
+
+.home .caption p {
+  font-size: 18px;
+  margin: 15px 0 30px;
+  color: #222222;
+}
+
+.home .caption a {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #000000;
+  text-decoration: none;
+  color: #ffffff;
 }
