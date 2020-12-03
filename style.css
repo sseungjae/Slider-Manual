@@ -24,6 +24,7 @@ body {
   background-position: center;
   z-index: 1;
   display: none;
+  padding: 0 15px;
   animation: slide 2s ease;
 }
 
@@ -101,4 +102,19 @@ body {
     opacity: 1;
     transform: translateX(0px);
   }
+}
+
+.home .controls .prev,
+.home .controls .next {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  margin-top: -20px;
+  color: #ffffff;
+  background-color: #ff5722;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
 }
