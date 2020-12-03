@@ -44,7 +44,7 @@ body {
 .container {
   max-width: 1170px;
   margin: auto;
-  background-color: rgba(250, 128, 114, 0.303);
+  /* background-color: rgba(250, 128, 114, 0.303); */
 }
 
 .home .container {
@@ -113,7 +113,7 @@ body {
   width: 40px;
   margin-top: -20px;
   color: #ffffff;
-  background-color: #ff5722;
+  background-color: salmon;
   text-align: center;
   line-height: 40px;
   font-size: 20px;
@@ -122,7 +122,7 @@ body {
 }
 .home .controls .prev:hover,
 .home .controls .next:hover {
-  background-color: #000000;
+  background-color: #e4aa8f;
   font-size: 30px;
 }
 .home .controls .prev {
