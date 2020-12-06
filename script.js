@@ -10,11 +10,13 @@ index=0;
 prev.addEventListener("click", function(){
     console.log("prev click")
     prevSlide()
+    updateCircleIndicator()
 })
 
 next.addEventListener("click", function(){
     console.log("next click")
     nextSlide()
+    updateCircleIndicator()
 })
 
 // create circle indicators
@@ -23,10 +25,21 @@ function circleIndicator(){
         const div=document.createElement("div");
               div.innerHTML=i+1;
               div.setAttribute("onclick", "indicateSlide(this)")
+              if(i==0){
+                  div.className="active";
+              }
               indicator.appendChild(div);
     }
 }
 circleIndicator();
+
+function updateCircleIndicator(){
+    for(let i = 0; i < indicator.children.length; i++){
+        // remove active class from all indicator circles
+        indicator.children[i].classList.remove("active");
+    }
+    indicator.children[index].classList.add("active");
+}
 
 function prevSlide(){
     if(index === 0){
