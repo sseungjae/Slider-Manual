@@ -1,22 +1,20 @@
- const slides = document.querySelector(".slider").children;
+const slides = document.querySelector(".slider").children;
 //console.log(slides)
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const indicator = document.querySelector(".indicator"); 
-index=0;
-
-
+let index=0;
 
 prev.addEventListener("click", function(){
     console.log("prev click")
-    prevSlide()
-    updateCircleIndicator()
+    prevSlide();
+    updateCircleIndicator();
 })
 
 next.addEventListener("click", function(){
     console.log("next click")
-    nextSlide()
-    updateCircleIndicator()
+    nextSlide();
+    updateCircleIndicator();
 })
 
 // create circle indicators
@@ -25,6 +23,7 @@ function circleIndicator(){
         const div=document.createElement("div");
               div.innerHTML=i+1;
               div.setAttribute("onclick", "indicateSlide(this)")
+              div.id=i;
               if(i==0){
                   div.className="active";
               }
@@ -32,6 +31,12 @@ function circleIndicator(){
     }
 }
 circleIndicator();
+
+function indicateSlide(element){
+    index = element.id;
+    changeSlide();
+    updateCircleIndicator();
+}
 
 function updateCircleIndicator(){
     for(let i = 0; i < indicator.children.length; i++){
@@ -42,7 +47,7 @@ function updateCircleIndicator(){
 }
 
 function prevSlide(){
-    if(index === 0){
+    if(index == 0){
         index=slides.length - 1;
     }else{
         index--;
@@ -51,7 +56,7 @@ function prevSlide(){
 }
 
 function nextSlide(){
-    if(index === slides.length -1 ){
+    if(index == slides.length -1 ){
         index=0;
     }else{
         index++;
