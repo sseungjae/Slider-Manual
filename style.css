@@ -155,3 +155,10 @@ body {
 .home .indicator div.active {
   background-color: rgb(147, 46, 35);
 }
+
+/* responsive page*/
+@media (max-width: 767px) {
+  .controls {
+    display: none;
+  }
+}
