@@ -9,12 +9,14 @@ prev.addEventListener("click", function(){
     console.log("prev click")
     prevSlide();
     updateCircleIndicator();
+    resetTimer();
 })
 
 next.addEventListener("click", function(){
     console.log("next click")
     nextSlide();
     updateCircleIndicator();
+    resetTimer();
 })
 
 // create circle indicators
@@ -36,6 +38,7 @@ function indicateSlide(element){
     index = element.id;
     changeSlide();
     updateCircleIndicator();
+    resetTimer();
 }
 
 function updateCircleIndicator(){
@@ -70,3 +73,18 @@ function changeSlide(){
     }
     slides[index].classList.add("active");
 }
+
+function resetTimer(){
+    //When click to indicator or controls button stop timer
+    clearInterval(timer);
+
+    //then restart timer
+    timer = setInterval(autoPlay, 4000);
+}
+
+function autoPlay(){
+    nextSlide();
+    updateCircleIndicator();
+}
+
+let timer = setInterval(autoPlay, 4000);
